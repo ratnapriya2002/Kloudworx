@@ -5,7 +5,7 @@ import './App.css'
 
 const App = () => {
   const [searchProduct, setSearchedProduct] = useState('')
-  const [dropDown, setDropDown] = useState('smartphones')
+  const [dropDown, setDropDown] = useState('')
   const [skip, setSkip] = useState(0)
   const [products, setProducts] = useState([])
 
@@ -15,11 +15,11 @@ const App = () => {
         `https://dummyjson.com/products?limit=10&skip=${skip}`,
       )
       const data = await response.json()
-      // console.log(data.products)
+      console.log(data.products)
       setProducts(data.products)
     }
     getProducts()
-  }, )
+  }, [])
 
   const getProducts = async () => {
     const response = await fetch(
@@ -41,8 +41,9 @@ const App = () => {
 
   const onChangeCategory = async event => {
     await setDropDown(event.target.value)
+    const filter = event.target.value
     const response = await fetch(
-      `https://dummyjson.com/products/category/${dropDown}`,
+      `https://dummyjson.com/products/category/${filter}`,
     )
     const data = await response.json()
     // console.log(dropDown, data.products)
@@ -76,6 +77,9 @@ const App = () => {
             onChange={onChangeCategory}
             value={dropDown}
           >
+            <option value="" disabled>
+              select category
+            </option>
             <option value="smartphones" selected>
               smartphones
             </option>
