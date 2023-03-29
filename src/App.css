@@ -1,38 +1,71 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+* {
+    box-sizing: border-box;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .table-container {
+    width: 100%;
+    height: 100%;
   }
-}
+  
+  .table-bottom-container {
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    background-color: lightgrey;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: lightgrey;
+  }
+  
+  .table thead tr th {
+    border: 1px solid grey;
+    text-align: center;
+    padding: 12px;
+  }
+  
+  .table tbody tr td {
+    border: 1px solid grey;
+    vertical-align: middle;
+    padding: 12px;
+  }
+  
+  .product-images {
+    height: 100px;
+  }
+  .table-heading {
+    font-size: 50px;
+    padding: 20px;
+    color: rgb(10, 6, 6);
+  }
+  .display-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+  }
+  .search {
+    font-size: 14px;
+    height: 40px;
+    border: 1px solid #d7dfe9;
+    background-color: #e2e8f0;
+    color: #64748b;
+    border-radius: 2px;
+    margin-top: 5px;
+    padding: 8px 16px 8px 16px;
+    outline: none;
+  }
+  .table-text {
+    font-family: Roboto;
+    color: #4f46e5;
+  }
